@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crews Control — Small Engine Repair in Briar Lake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #1c1c1e;
+            --dark-gray: #2a2a2e;
+            --mid-gray: #3a3a3f;
+            --light-gray: #b0b0b5;
+            --off-white: #e8e8ec;
+            --white: #f5f5f7;
+            --orange: #e85d26;
+            --orange-hover: #ff7340;
+            --yellow: #f0a500;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: var(--off-white);
+            background: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--charcoal);
+            text-align: center;
+            padding: 70px 20px 60px;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            font-size: 4rem;
+            letter-spacing: 4px;
+            color: var(--white);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        header h1 span {
+            color: var(--orange);
+        }
+
+        header p.tagline {
+            font-size: 1.05rem;
+            color: var(--light-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        header .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            padding: 14px 36px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--orange);
+            transition: all 0.2s;
+        }
+
+        header .cta-button:hover {
+            background: transparent;
+            color: var(--orange);
+        }
+
+        /* NAV */
+        nav {
+            background: var(--dark-gray);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--mid-gray);
+        }
+
+        nav a {
+            color: var(--light-gray);
+            text-decoration: none;
+            display: inline-block;
+            padding: 14px 22px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            font-size: 2.2rem;
+            color: var(--white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--orange);
+            margin: 12px auto 24px;
+        }
+
+        section > p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 36px;
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--mid-gray);
+            padding: 28px 24px;
+            text-align: left;
+            transition: border-color 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: var(--orange);
+        }
+
+        .service-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: var(--light-gray);
+            line-height: 1.5;
+        }
+
+        /* DIVIDER SECTION */
+        .divider-section {
+            background: var(--dark-gray);
+            border-top: 1px solid var(--mid-gray);
+            border-bottom: 1px solid var(--mid-gray);
+        }
+
+        /* ABOUT */
+        .about-content {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-photo {
+            flex: 1 1 280px;
+            background: var(--mid-gray);
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            border: 1px solid var(--mid-gray);
+        }
+
+        .about-text {
+            flex: 1 1 320px;
+        }
+
+        .about-text h2 {
+            text-align: left;
+        }
+
+        .about-text h2::after {
+            margin: 12px 0 24px;
+        }
+
+        .about-text p {
+            text-align: left;
+            margin-bottom: 14px;
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .about-text .highlight {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* HOURS */
+        .hours-table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .hours-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--mid-gray);
+            font-size: 0.95rem;
+        }
+
+        .hours-table td:first-child {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .hours-table td:last-child {
+            color: var(--light-gray);
+            text-align: right;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: var(--dark-gray);
+            border-top: 1px solid var(--mid-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 20px;
+        }
+
+        .contact-item .icon {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--orange);
+        }
+
+        .contact-item h3 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            color: var(--white);
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--orange);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            border-top: 1px solid var(--mid-gray);
+            color: #666;
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.6rem;
+                letter-spacing: 2px;
+            }
+
+            header p.tagline {
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+            }
+
+            nav a {
+                padding: 12px 14px;
+                font-size: 0.75rem;
+            }
+
+            section {
+                padding: 44px 16px;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>Crews <span>Control</span></h1>
+    <p class="tagline">Small Engine Repair &bull; Briar Lake &amp; Surrounding Areas</p>
+    <a href="tel:+15555551234" class="cta-button">Call (555) 555-1234</a>
+</header>
+
+<!-- NAV -->
+<nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>What We Fix</h2>
+    <p>From pull-starts to carburetors, we get your equipment running right. No job too small.</p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="icon">&#128295;</div>
+            <h3>General Handyman</h3>
+            <p>Drywall, doors, shelving, furniture assembly, and odd jobs around the house.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">&#128167;</div>
+            <h3>Plumbing</h3>
+            <p>Leaky faucets, running toilets, clogged drains, and fixture replacements.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">&#9889;</div>
+            <h3>Electrical</h3>
+            <p>Outlets, switches, light fixtures, ceiling fans, and minor wiring repairs.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">&#127968;</div>
+            <h3>Appliance Repair</h3>
+            <p>Washers, dryers, dishwashers, refrigerators, and other household appliances.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">&#128736;</div>
+            <h3>Small Engine</h3>
+            <p>Lawn mowers, leaf blowers, chainsaws, and other outdoor power equipment.</p>
+        </div>
+        <div class="service-card">
+            <div class="icon">&#128166;</div>
+            <h3>Pressure Washing</h3>
+            <p>Decks, driveways, siding, and fences — make it look new again.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<div class="divider-section">
+<section id="about">
+    <div class="about-content">
+        <div class="about-photo">[Your photo here]</div>
+        <div class="about-text">
+            <h2>About Patrick</h2>
+            <p>Born and raised right here in Briar Lake, Patrick Crews has been fixing things for neighbors and friends for over 15 years. What started as helping folks out on weekends turned into a full-time passion.</p>
+            <p>We believe in fair prices, honest work, and treating every customer like a neighbor. If we can't fix it, we'll tell you straight — no runaround.</p>
+            <p class="highlight">Licensed &amp; Insured &bull; Free Estimates</p>
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- HOURS -->
+<section id="hours">
+    <h2>Hours</h2>
+    <p>Give us a call anytime — if we can't pick up, we'll get back to you the same day.</p>
+    <table class="hours-table">
+        <tr><td>Monday - Friday</td><td>8:00 AM - 6:00 PM</td></tr>
+        <tr><td>Saturday</td><td>9:00 AM - 3:00 PM</td></tr>
+        <tr><td>Sunday</td><td>Closed</td></tr>
+    </table>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section">
+<section id="contact">
+    <h2>Get In Touch</h2>
+    <p>Ready to get it fixed? Reach out however is easiest for you.</p>
+
+    <div class="contact-grid">
+        <div class="contact-item">
+            <div class="icon">&#128222;</div>
+            <h3>Phone</h3>
+            <a href="tel:+15555551234">(555) 555-1234</a>
+        </div>
+        <div class="contact-item">
+            <div class="icon">&#9993;</div>
+            <h3>Email</h3>
+            <a href="mailto:patrick@crewscontrol.com">patrick@crewscontrol.com</a>
+        </div>
+        <div class="contact-item">
+            <div class="icon">&#128205;</div>
+            <h3>Service Area</h3>
+            <p>Briar Lake, Cedar Hollow, Millfield &amp; surrounding communities</p>
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2025 Crews Control &mdash; Briar Lake, TX &bull; All rights reserved.
+</footer>
+
+</body>
+</html>
