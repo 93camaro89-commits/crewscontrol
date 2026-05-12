@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crews Control — Small Engine Repair in Briar Lake</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Oswald:wght@400;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,9 +20,9 @@
             --light-gray: #b0b0b5;
             --off-white: #e8e8ec;
             --white: #f5f5f7;
-            --orange: #e85d26;
-            --orange-hover: #ff7340;
-            --yellow: #f0a500;
+            --gold: #e8b830;
+            --gold-bright: #f5cc3a;
+            --gold-dark: #c49a1e;
         }
 
         body {
@@ -36,49 +36,105 @@
         header {
             background: var(--charcoal);
             text-align: center;
-            padding: 70px 20px 60px;
-            border-bottom: 3px solid var(--orange);
+            padding: 50px 20px 40px;
+            border-bottom: 3px solid var(--gold);
         }
 
-        header h1 {
-            font-family: 'Bebas Neue', Impact, sans-serif;
-            font-size: 4rem;
-            letter-spacing: 4px;
+        /* LOGO */
+        .logo-outer {
+            display: inline-block;
+            border: 3px solid var(--gold);
+            padding: 4px;
+            margin-bottom: 28px;
+        }
+
+        .logo-inner {
+            border: 1px solid var(--gold-dark);
+            padding: 22px 36px;
+        }
+
+        .logo-crews {
+            font-family: 'Saira Stencil One', sans-serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            letter-spacing: 6px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .logo-control {
+            font-family: 'Saira Stencil One', sans-serif;
+            font-size: 1.5rem;
             color: var(--white);
+            letter-spacing: 8px;
+            line-height: 1;
             text-transform: uppercase;
-            margin-bottom: 4px;
         }
 
-        header h1 span {
-            color: var(--orange);
+        .logo-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
         }
 
-        header p.tagline {
-            font-size: 1.05rem;
+        .logo-div-line {
+            flex: 1;
+            height: 1px;
+            background: var(--gold-dark);
+        }
+
+        .logo-div-gear {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .logo-service {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             color: var(--light-gray);
-            letter-spacing: 2px;
+        }
+
+        .logo-est {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 3px;
+            color: #666;
+            margin-top: 6px;
             text-transform: uppercase;
-            font-weight: 500;
-            margin-bottom: 30px;
         }
 
         header .cta-button {
             display: inline-block;
-            background: var(--orange);
-            color: white;
+            background: var(--gold);
+            color: #1c1c1e;
             text-decoration: none;
             padding: 14px 36px;
             font-size: 1rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border: 2px solid var(--orange);
+            border: 2px solid var(--gold);
             transition: all 0.2s;
         }
 
         header .cta-button:hover {
             background: transparent;
-            color: var(--orange);
+            color: var(--gold);
+        }
+
+        @media (max-width: 600px) {
+            .logo-crews {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+            .logo-control {
+                font-size: 1.1rem;
+                letter-spacing: 5px;
+            }
         }
 
         /* NAV */
@@ -104,7 +160,7 @@
         }
 
         nav a:hover {
-            color: var(--orange);
+            color: var(--gold);
         }
 
         /* SECTIONS */
@@ -129,7 +185,7 @@
             display: block;
             width: 50px;
             height: 3px;
-            background: var(--orange);
+            background: var(--gold);
             margin: 12px auto 24px;
         }
 
@@ -157,7 +213,7 @@
         }
 
         .service-card:hover {
-            border-color: var(--orange);
+            border-color: var(--gold);
         }
 
         .service-card .icon {
@@ -227,7 +283,7 @@
         }
 
         .about-text .highlight {
-            color: var(--orange);
+            color: var(--gold);
             font-weight: 600;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -282,7 +338,7 @@
         }
 
         .pay-card:hover {
-            border-color: var(--orange);
+            border-color: var(--gold);
         }
 
         .pay-card .pay-icon {
@@ -308,7 +364,7 @@
 
         .pay-card .pay-button {
             display: inline-block;
-            background: var(--orange);
+            background: var(--gold);
             color: white;
             text-decoration: none;
             padding: 12px 30px;
@@ -316,14 +372,14 @@
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border: 2px solid var(--orange);
+            border: 2px solid var(--gold);
             transition: all 0.2s;
             cursor: pointer;
         }
 
         .pay-card .pay-button:hover {
             background: transparent;
-            color: var(--orange);
+            color: var(--gold);
         }
 
         .pay-card .venmo-qr {
@@ -364,7 +420,7 @@
         .contact-item .icon {
             font-size: 1.6rem;
             margin-bottom: 10px;
-            color: var(--orange);
+            color: var(--gold);
         }
 
         .contact-item h3 {
@@ -383,7 +439,7 @@
         }
 
         .contact-item a:hover {
-            color: var(--orange);
+            color: var(--gold);
         }
 
         /* FOOTER */
@@ -399,16 +455,6 @@
 
         /* MOBILE */
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.6rem;
-                letter-spacing: 2px;
-            }
-
-            header p.tagline {
-                font-size: 0.85rem;
-                letter-spacing: 1px;
-            }
-
             nav a {
                 padding: 12px 14px;
                 font-size: 0.75rem;
@@ -428,8 +474,20 @@
 
 <!-- HEADER -->
 <header>
-    <h1>Crews <span>Control</span></h1>
-    <p class="tagline">Small Engine Repair &bull; Briar Lake &amp; Surrounding Areas</p>
+    <div class="logo-outer">
+        <div class="logo-inner">
+            <div class="logo-crews">CREWS</div>
+            <div class="logo-control">CONTROL</div>
+            <div class="logo-divider">
+                <div class="logo-div-line"></div>
+                <div class="logo-div-gear">&#9881;</div>
+                <div class="logo-div-line"></div>
+            </div>
+            <div class="logo-service">Small Engine Repair</div>
+            <div class="logo-est">Briar Lake, TX &bull; Est. 2025</div>
+        </div>
+    </div>
+    <br>
     <a href="tel:+15555551234" class="cta-button">Call (555) 555-1234</a>
 </header>
 
