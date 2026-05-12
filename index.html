@@ -258,6 +258,92 @@
             text-align: right;
         }
 
+        /* PAY ONLINE */
+        .pay-section {
+            background: var(--charcoal);
+            border-top: 1px solid var(--mid-gray);
+            border-bottom: 1px solid var(--mid-gray);
+        }
+
+        .pay-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pay-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--mid-gray);
+            padding: 36px 28px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .pay-card:hover {
+            border-color: var(--orange);
+        }
+
+        .pay-card .pay-icon {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+
+        .pay-card h3 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .pay-card p {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .pay-card .pay-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--orange);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .pay-card .pay-button:hover {
+            background: transparent;
+            color: var(--orange);
+        }
+
+        .pay-card .venmo-qr {
+            width: 180px;
+            height: 180px;
+            background: var(--white);
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .pay-card .venmo-note {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+        }
+
         /* CONTACT */
         .contact-section {
             background: var(--dark-gray);
@@ -352,6 +438,7 @@
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#hours">Hours</a>
+    <a href="#pay">Pay Online</a>
     <a href="#contact">Contact</a>
 </nav>
 
@@ -419,6 +506,33 @@
         <tr><td>Sunday</td><td>Closed</td></tr>
     </table>
 </section>
+
+<!-- PAY ONLINE -->
+<div class="pay-section">
+<section id="pay">
+    <h2>Pay Online</h2>
+    <p>Convenient payment options — pay your invoice securely online.</p>
+
+    <div class="pay-grid">
+        <div class="pay-card">
+            <div class="pay-icon">&#128179;</div>
+            <h3>Pay with PayPal</h3>
+            <p>Click below to pay securely through PayPal. Credit and debit cards accepted — no PayPal account needed.</p>
+            <!-- REPLACE: Swap this link with your real PayPal.me link or PayPal button code -->
+            <a href="https://www.paypal.com/paypalme/YOURUSERNAME" class="pay-button" target="_blank" rel="noopener">Pay Now</a>
+        </div>
+        <div class="pay-card">
+            <div class="pay-icon">&#128241;</div>
+            <h3>Pay with Venmo</h3>
+            <p>Scan the QR code below with your phone's camera or Venmo app.</p>
+            <!-- REPLACE: Swap this placeholder with a real Venmo QR code image -->
+            <!-- To use a real QR image: <img src="venmo-qr.png" alt="Venmo QR Code" style="width:180px;height:180px;"> -->
+            <div class="venmo-qr">[Venmo QR code here]</div>
+            <p class="venmo-note">@PatrickCrews on Venmo</p>
+        </div>
+    </div>
+</section>
+</div>
 
 <!-- CONTACT -->
 <div class="contact-section">
